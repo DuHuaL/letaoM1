@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>乐淘-搜索</title>
+  <link rel="stylesheet" href="../assets/mui/css/mui.min.css">
+  <link rel="stylesheet" href="../assets/fontAwesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/mobile.css">
+</head>
+<body>
+  <div class="lt_container">
+    <!-- 顶部通栏 -->
+    <header class="lt_topBar">
+      <a href="javascript:history.back();" class="icon_left">
+        <span class="mui-icon mui-icon-back"></span>
+      </a>
+      <span>搜索中心</span>
+      <!-- <a href="#" class="icon_right">
+        <span class="mui-icon mui-icon-search"></span>
+      </a> -->
+    </header>
+    <div class="lt_content">
+      <!-- 区域滚动 -->
+      <div class="lt_wrapper">
+        <!-- 搜索输入框 -->
+        <div class="lt_search">
+          <input type="search" placeholder="搜索你喜欢的商品">
+          <a href="javascript:;">搜索</a>
+        </div>
+        <!-- 搜索历史 -->
+        <div class="lt_history">
+          <!-- 动态生成 -->
+        </div>
+      </div>
+    </div>
+    <!-- 底部页签 -->
+    <footer class="lt_tabs">
+      <ul>
+        <li><a href="index.html"><span class="fa fa-home"></span><p>首页</p></a></li>
+        <li><a href="category.html"><span class="fa fa-bars"></span><p>分类</p></a></li>
+        <li><a href="user/cart.html"><span class="fa fa-shopping-cart"></span><p>购物车</p></a></li>
+        <li><a href="user/index.html"><span class="fa fa-user"></span><p>个人中心</p></a></li>
+      </ul>
+    </footer>
+  </div>
+  <script id="history" type="text/template">
+    {{ if $data.length }}
+    <div class="title">
+      <span>搜索历史</span>
+      <a href="javascript:;"><span class="mui-icon mui-icon-trash"></span>清空历史</a>
+    </div>
+    <ul class="content">
+      <!-- 动态生成 -->
+      <% for (var i = $data.length - 1; i >= 0; i--) { %>
+      <li><a href="javascript:;"><%=$data[i] %></a><span class="mui-icon mui-icon-closeempty" data-index="<%= i %>"></span></li>
+      <% } %>
+    </ul>
+    {{ else }} 
+    <div class="title">
+      <span>没有搜索历史记录</span>
+    </div>
+    {{ /if }}
+  </script>
+  <script src="../assets/mui/js/mui.min.js"></script>
+  <script src="../assets/zepto/zepto.min.js"></script>
+  <script src="../assets/artTemplate/template-web.js"></script>
+  <script src="../js/search.js"></script>
+</body>
+</html>

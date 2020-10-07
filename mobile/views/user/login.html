@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>乐淘-用户-登录</title>
+  <link rel="stylesheet" href="../../assets/mui/css/mui.min.css">
+  <link rel="stylesheet" href="../../assets/fontAwesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../../css/mobile.css">
+</head>
+<body>
+  <div class="lt_container">
+    <!-- 顶部通栏 -->
+    <header class="lt_topBar">
+      <span>乐淘登录</span>
+    </header>
+    <div class="lt_content">
+      <!-- 区域滚动 -->
+      <div class="lt_wrapper">
+        <div class="mui-scroll-wrapper">
+          <form class="mui-input-group">
+            <div class="mui-input-row">
+                <label>用户名</label>
+            <input type="text" class="mui-input-clear" placeholder="请输入用户名" name="username">
+            </div>
+            <div class="mui-input-row">
+                <label>密码</label>
+                <input type="password" class="mui-input-password" placeholder="请输入密码" name="password">
+            </div>
+            <div class="mui-button-row">
+                <button type="button" class="mui-btn mui-btn-primary" >确认</button>
+                <button type="button" class="mui-btn mui-btn-danger" >取消</button>
+            </div>
+        </form>
+        </div>
+      </div>
+    </div>
+    <!-- 底部页签 -->
+    <footer class="lt_tabs">
+      <ul>
+        <li><a href="../index.html" ><span class="fa fa-home"></span><p>首页</p></a></li>
+        <li><a href="../category.html"><span class="fa fa-bars"></span><p>分类</p></a></li>
+        <li><a href="./cart.html"><span class="fa fa-shopping-cart"></span><p>购物车</p></a></li>
+        <li><a href="./index.html" class="now"><span class="fa fa-user"></span><p>个人中心</p></a></li>
+      </ul>
+    </footer>
+  </div>
+  <script src="../../assets/mui/js/mui.min.js"></script>
+  <script src="../../assets/zepto/zepto.min.js"></script>
+  <script src="../../js/letao.js"></script>
+  <script src="../../js/login.js"></script>
+</body>
+</html>

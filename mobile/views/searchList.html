@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>商品列表</title>
+  <link rel="stylesheet" href="../assets/mui/css/mui.css">
+  <link rel="stylesheet" href="../assets/fontAwesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/mobile.css">
+</head>
+<body>
+  <div class="lt_container">
+    <!-- 顶部通栏 -->
+    <header class="lt_topBar">
+      <a href="javascript:history.back();" class="icon_left">
+        <span class="mui-icon mui-icon-back"></span>
+      </a>
+      <span>商品列表</span>
+    </header>
+    <div class="lt_content">
+      <!-- 区域滚动 -->
+      <div class="lt_wrapper">
+        <div class="mui-scroll-wrapper">
+          <div class="mui-scroll">
+             <!-- 搜索输入框 -->
+            <div class="lt_search">
+              <input type="search" placeholder="搜索你喜欢的商品">
+              <a href="javascript:;">搜索</a>
+            </div>
+            <!-- 排序 -->
+            <div class="lt_order mui-clearfix">
+              <a data-order-type="time" href="javascript:;">上架时间<span class="mui-icon mui-icon-arrowdown"></span></a>
+              <a data-order-type="price" href="javascript:;">价格<span class="mui-icon mui-icon-arrowdown"></span></a>
+              <a data-order-type="num" href="javascript:;">销量<span class="mui-icon mui-icon-arrowdown"></span></a>
+              <a data-order-type="sale" href="javascript:;">折扣<span class="mui-icon mui-icon-arrowdown"></span></a>
+            </div>
+            <!-- 产品盒子 -->
+            <div class="lt_product">
+              <ul class="mui-clearfix">
+                <!-- todu -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 底部页签 -->
+    <footer class="lt_tabs">
+      <ul>
+        <li><a href="index.html"><span class="fa fa-home"></span><p>首页</p></a></li>
+        <li><a href="category.html"><span class="fa fa-bars"></span><p>分类</p></a></li>
+        <li><a href="user/cart.html"><span class="fa fa-shopping-cart"></span><p>购物车</p></a></li>
+        <li><a href="user/index.html"><span class="fa fa-user"></span><p>个人中心</p></a></li>
+      </ul>
+    </footer>
+  </div>
+  <script type="text/template" id="renderList">
+    {{ each list }}
+    <li>
+      <a href="product.html?id={{$value.id}}" class="lt_pro_box">
+        <img src="../images/detail.jpg" alt="">
+        <p class="name mui-ellipsis-2">{{ $value.proName}}</p>
+        <p class="price"><span class="oldPrice">&yen;{{$value.oldPrice}}</span><span class="newPrice">&yen;{{$value.price}}</span></p>
+        <button>立即购买</button>
+      </a>
+    </li>
+    {{ /each}}
+  </script>
+  <script src="../assets/mui/js/mui.js"></script>
+  <script src="../assets/zepto/zepto.min.js"></script>
+  <script src="../assets/artTemplate/template-web.js"></script>
+  <script src="../js/searchList.js"></script>
+</body>
+</html>
